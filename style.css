@@ -1,0 +1,90 @@
+:root {
+    --inactive-color: #CCC;
+    --active-color: #333;
+    --transition-speed: 200ms;
+    --input-width: 200px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+form {
+    margin: 40px;
+}
+
+.form_group {
+    position: relative;
+    margin: 10px;
+}
+
+.ma-input {
+    width: 100%;
+    max-width: var(--input-width);
+    padding: 10px 5px;
+    border: none;
+    border-bottom: 1px solid var(--inactive-color);
+}
+
+.ma-input:focus {
+    outline: none;
+}
+
+.ma-input:valid {
+    border-bottom: 1px solid var(--active-color);
+}
+
+.ma-input~label {
+    pointer-events: none;
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    color: var(--inactive-color);
+}
+
+.ma-input:focus~label,
+.ma-input:valid~label {
+    top: -15px;
+    color: var(--active-color);
+    -webkit-transition: top var(--transition-speed) ease;
+    -moz-transition: top var(--transition-speed) ease;
+    transition: top var(--transition-speed) ease;
+}
+
+.bar {
+    position: relative;
+    max-width: var(--input-width);
+}
+
+.bar:before,
+.bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    position: absolute;
+    top: -1px;
+    background-color: var(--active-color);
+    -webkit-transition: width var(--transition-speed) ease;
+    -moz-transition: width var(--transition-speed) ease;
+    transition: width var(--transition-speed) ease;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+.ma-input:focus~.bar:before,
+.ma-input:focus~.bar:after {
+    width: 50%;
+}
