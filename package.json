@@ -1,0 +1,22 @@
+{
+  "name": "material-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "style.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/happymuzhik/material-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/happymuzhik/material-test/issues"
+  },
+  "homepage": "https://github.com/happymuzhik/material-test#readme",
+  "devDependencies": {
+    "autoprefixer-stylus": "^0.14.0"
+  }
+}
