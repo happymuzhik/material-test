@@ -13,10 +13,10 @@ $input-width = 200px
 
 .ma-input
     width: 100%
-    max-width: var($input-width)
+    max-width: $input-width
     padding: 10px 5px
     border: none
-    border-bottom: 1px solid var($inactive-color)
+    border-bottom: 1px solid $inactive-color
 
 
 .ma-input:focus
@@ -24,7 +24,7 @@ $input-width = 200px
 
 
 .ma-input:valid
-    border-bottom: 1px solid var($active-color)
+    border-bottom: 1px solid $active-color
 
 
 .ma-input~label
@@ -32,21 +32,21 @@ $input-width = 200px
     position: absolute
     left: 5px
     top: 10px
-    color: var($inactive-color)
+    color: $inactive-color
 
 
 .ma-input:focus~label,
 .ma-input:valid~label
     top: -15px
-    color: var($active-color)
-    -webkit-transition: top var($transition-speed) ease
-    -moz-transition: top var($transition-speed) ease
-    transition: top var($transition-speed) ease
+    color: $active-color
+    -webkit-transition: top $transition-speed) eas
+    -moz-transition: top $transition-speed) eas
+    transition: top $transition-speed) eas
 
 
 .bar
     position: relative
-    max-width: var($input-width)
+    max-width: $input-width
 
 
 .bar:before,
@@ -56,10 +56,10 @@ $input-width = 200px
     width: 0
     position: absolute
     top: -1px
-    background-color: var($active-color)
-    -webkit-transition: width var($transition-speed) ease
-    -moz-transition: width var($transition-speed) ease
-    transition: width var($transition-speed) ease
+    background-color: $active-color
+    -webkit-transition: width $transition-speed) eas
+    -moz-transition: width $transition-speed) eas
+    transition: width $transition-speed) eas
 
 
 .bar:before
@@ -77,8 +77,8 @@ $input-width = 200px
 
 .ma-button
     outline: none
-    border: 1px solid var($active-color)
-    background-color: var($active-color)
+    border: 1px solid $active-color
+    background-color: $active-color
     color: #FFF
     cursor: pointer
     text-align: center
@@ -96,13 +96,13 @@ $input-width = 200px
 
 .ma-button.outline
     background-color: #FFF
-    color: var($active-color)
+    color: $active-color
 
 
 .ma-button.outline.no-border
     border: 1px solid #FFF
     background-color: #FFF
-    color: var($active-color)
+    color: $active-color
 
 
 .ma-button:hover
@@ -111,14 +111,14 @@ $input-width = 200px
 
 
 .ma-button.outline:hover
-    background-color: var($active-color)
+    background-color: $active-color
     color: #FFF
 
 
 .ma-button.outline.no-border:hover
     border: 1px solid #EEE
     background-color: #EEE
-    color: var($active-color)
+    color: $active-color
 
 
 .ma-button>.box
