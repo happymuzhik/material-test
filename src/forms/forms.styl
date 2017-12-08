@@ -1,7 +1,4 @@
-$inactive-color = #CCC
-$active-color = #333
-$transition-speed = 200ms
-$input-width = 200px
+@import "./../common/vars.styl"
 
 .ma-form-group,
 .form-group
@@ -39,9 +36,9 @@ $input-width = 200px
 .ma-input:valid~label
     top: -15px
     color: $active-color
-    -webkit-transition: top $transition-speed) eas
-    -moz-transition: top $transition-speed) eas
-    transition: top $transition-speed) eas
+    -webkit-transition: top $transition-speed ease
+    -moz-transition: top $transition-speed ease
+    transition: top $transition-speed ease
 
 
 .bar
@@ -57,9 +54,9 @@ $input-width = 200px
     position: absolute
     top: -1px
     background-color: $active-color
-    -webkit-transition: width $transition-speed) eas
-    -moz-transition: width $transition-speed) eas
-    transition: width $transition-speed) eas
+    -webkit-transition: width $transition-speed ease
+    -moz-transition: width $transition-speed ease
+    transition: width $transition-speed ease
 
 
 .bar:before
@@ -73,82 +70,4 @@ $input-width = 200px
 .ma-input:focus~.bar:before,
 .ma-input:focus~.bar:after
     width: 50%
-
-
-.ma-button
-    outline: none
-    border: 1px solid $active-color
-    background-color: $active-color
-    color: #FFF
-    cursor: pointer
-    text-align: center
-    letter-spacing: .5px
-    border-radius: 2px
-    padding: 0
-    height: 36px
-    line-height: 36px
-    vertical-align: middle
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)
-    -webkit-transition: all 300ms ease
-    -moz-transition: all 300ms ease
-    transition: all 300ms ease
-
-
-.ma-button.outline
-    background-color: #FFF
-    color: $active-color
-
-
-.ma-button.outline.no-border
-    border: 1px solid #FFF
-    background-color: #FFF
-    color: $active-color
-
-
-.ma-button:hover
-    background-color: #666
-    color: #FFF
-
-
-.ma-button.outline:hover
-    background-color: $active-color
-    color: #FFF
-
-
-.ma-button.outline.no-border:hover
-    border: 1px solid #EEE
-    background-color: #EEE
-    color: $active-color
-
-
-.ma-button>.box
-    padding: 0 2rem
-    overflow: hidden
-    user-select: none
-    position: relative
-
-
-.ripple-effect
-    pointer-events: none
-    background-color: rgba(255, 255, 255, .6)
-    width: 100%
-    height: 100%
-    border-radius: 100%
-    position: absolute
-    animation-name: ripple
-    animation-iteration-count: 1
-    animation-duration: 1.2s
-    transform: translateX(-50%) translateY(-50%)
-
-
-@keyframes ripple
-    from
-        width: 0
-        height: 0
-        opacity: 1
-    
-    to
-        width: 500px
-        height: 500px
-        opacity: 0
     

@@ -26,7 +26,7 @@ gulp.task('stylus', function () {
 });
 
 gulp.task('stylus-min', function () {
-    return gulp.src([dev_css_dir + '*/*.css', dev_css_dir + '*/*.styl'])
+    return gulp.src(dev_css_dir + '*/*.styl')
         .pipe(plumber())
         .pipe(stylus({
             compress: false,
@@ -53,8 +53,8 @@ gulp.task('jsconcat-min', function () {
 });
 
 gulp.task('watch', ['stylus', 'stylus-min', 'jsconcat', 'jsconcat-min'], function () {
-    gulp.watch('./src/*.styl', ['stylus']);
-    gulp.watch('./src/*.styl', ['stylus-min']);
-    gulp.watch('./src/*.js', ['jsconcat']);
-    gulp.watch('./src/*.js', ['jsconcat-min']);
+    gulp.watch('./src/*/*.styl', ['stylus']);
+    gulp.watch('./src/*/*.styl', ['stylus-min']);
+    gulp.watch('./src/*/*.js', ['jsconcat']);
+    gulp.watch('./src/*/*.js', ['jsconcat-min']);
 });
