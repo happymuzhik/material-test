@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
 (function (document, window, undefined) {
 
-    const rippleElements = document.querySelectorAll('.ripple');
+    const rippleElements = document.querySelectorAll('.ma-button');
 
     //Create Ripple Effect
-    function createRipple() {
+    function createRipple(event) {
 
         //Create Ripple
         const rippleClassName = "ripple-effect";
@@ -23,18 +23,19 @@ document.addEventListener("DOMContentLoaded", function() {
         ripple.addEventListener("webkitAnimationEnd", destroyRipple, false);
         ripple.addEventListener("oAnimationEnd", destroyRipple, false);
         ripple.addEventListener("MSAnimationEnd", destroyRipple, false);
-    }
+    };
 
     function destroyRipple() {
         this.parentElement.removeChild(this);
-    }
+    };
 
     //Add Event Listeners
     for (let i = 0; i < rippleElements.length; i++) {
-        const ripple = rippleElements[i];
-        ripple.addEventListener('mousedown', createRipple, false);
-        ripple.addEventListener('touchstart', createRipple, false);
+        // this is for FF
+        const ripple = rippleElements[i].querySelectorAll('.ripple')[0];
+        rippleElements[i].addEventListener('mousedown', createRipple.bind(ripple), false);
+        rippleElements[i].addEventListener('touchstart', createRipple.bind(ripple), false);
     };
 
 })(document, window);
-})
+});
