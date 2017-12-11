@@ -1,1 +1,47 @@
 @import "./../common/vars.styl"
+
+.ma-input
+    width: 100%
+    max-width: $input-width
+    padding: 10px 5px
+    border: none
+    border-bottom: 1px solid $inactive-color
+    &:focus
+        outline: none
+        &~.bar:before
+        &~.bar:after
+            width: 50%
+    &:valid
+        border-bottom: 1px solid $active-color
+    &:focus
+    &:valid
+        &~label
+            top: -15px
+            color: $active-color
+            transition: top $transition-speed ease
+    &~label
+        pointer-events: none
+        position: absolute
+        left: 5px
+        top: 10px
+        color: $inactive-color
+
+.bar
+    position: relative
+    max-width: $input-width
+    &:before,
+    &:after
+        content: ''
+        height: 2px
+        width: 0
+        position: absolute
+        top: -1px
+        background-color: $active-color
+        -webkit-transition: width $transition-speed ease
+        -moz-transition: width $transition-speed ease
+        transition: width $transition-speed ease
+    &:before
+        left: 50%
+    &:after
+        right: 50%
+    

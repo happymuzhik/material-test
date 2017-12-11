@@ -615,9 +615,6 @@ html *,
 body * {
   font-family: sans-serif;
 }
-form {
-  margin: 40px;
-}
 
 
 .ma-button {
@@ -714,6 +711,9 @@ form {
   }
 }
 
+form {
+  padding: 30px;
+}
 .ma-form-group,
 .form-group {
   margin: 10px;
@@ -721,6 +721,7 @@ form {
 .ma-form-group {
   position: relative;
 }
+
 .ma-input {
   width: 100%;
   max-width: 200px;
@@ -731,15 +732,12 @@ form {
 .ma-input:focus {
   outline: none;
 }
+.ma-input:focus~.bar:before,
+.ma-input:focus~.bar:after {
+  width: 50%;
+}
 .ma-input:valid {
   border-bottom: 1px solid #333;
-}
-.ma-input~label {
-  pointer-events: none;
-  position: absolute;
-  left: 5px;
-  top: 10px;
-  color: #ccc;
 }
 .ma-input:focus~label,
 .ma-input:valid~label {
@@ -747,6 +745,13 @@ form {
   color: #333;
   -webkit-transition: top 200ms ease;
   transition: top 200ms ease;
+}
+.ma-input~label {
+  pointer-events: none;
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  color: #ccc;
 }
 .bar {
   position: relative;
@@ -769,8 +774,3 @@ form {
 .bar:after {
   right: 50%;
 }
-.ma-input:focus~.bar:before,
-.ma-input:focus~.bar:after {
-  width: 50%;
-}
-
