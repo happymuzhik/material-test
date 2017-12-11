@@ -1,20 +1,21 @@
+document.addEventListener("DOMContentLoaded", function() {
 (function (document, window, undefined) {
-    
-    var rippleElements = document.getElementsByClassName('ripple');
+
+    const rippleElements = document.querySelectorAll('.ripple');
 
     //Create Ripple Effect
     function createRipple() {
 
         //Create Ripple
-        var rippleClassName = "ripple-effect";
-        ripple = document.createElement("div");
+        const rippleClassName = "ripple-effect";
+        const ripple = document.createElement("div");
         ripple.className = rippleClassName;
 
         //Add Ripple to document
         this.appendChild(ripple);
 
         //Position Ripple
-        var rect = event.target.getBoundingClientRect();
+        const rect = event.target.getBoundingClientRect();
         ripple.style.top = (event.pageY || event.targetTouches[0].pageY) - rect.top - ripple.offsetHeight / 2 - document.body.scrollTop + 'px';
         ripple.style.left = (event.pageX || event.targetTouches[0].pageX) - rect.left - ripple.offsetWidth / 2 - document.body.scrollLeft + 'px';
 
@@ -29,9 +30,11 @@
     }
 
     //Add Event Listeners
-    for (var i = 0; i < rippleElements.length; i++) {
-        rippleElements[i].addEventListener('mousedown', createRipple, false);
-        rippleElements[i].addEventListener('touchstart', createRipple, false);
-    }
+    for (let i = 0; i < rippleElements.length; i++) {
+        const ripple = rippleElements[i];
+        ripple.addEventListener('mousedown', createRipple, false);
+        ripple.addEventListener('touchstart', createRipple, false);
+    };
 
 })(document, window);
+})

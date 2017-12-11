@@ -5,6 +5,7 @@ const autoprefixer = require('autoprefixer-stylus');
 const concat = require('gulp-concat');
 const cleanCSS = require('gulp-clean-css');
 const uglify = require('gulp-uglify');
+const babel = require('gulp-babel');
 
 const dev_css_dir = './src/';
 const dev_js_dir = './src/';
@@ -40,6 +41,9 @@ gulp.task('stylus-min', function () {
 gulp.task('jsconcat', function () {
     return gulp.src(dev_js_dir + '*/*.js')
         .pipe(plumber())
+        .pipe(babel({
+            presets: ['env']
+        }))
         .pipe(concat('hm-material-ui.js'))
         .pipe(gulp.dest(js_src_dir));
 });
@@ -47,6 +51,9 @@ gulp.task('jsconcat', function () {
 gulp.task('jsconcat-min', function () {
     return gulp.src(dev_js_dir + '*/*.js')
         .pipe(plumber())
+        .pipe(babel({
+            presets: ['env']
+        }))
         .pipe(concat('hm-material-ui-min.js'))
         .pipe(uglify())
         .pipe(gulp.dest(js_dir));

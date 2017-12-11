@@ -1,37 +1,41 @@
-(function (document, window, undefined) {
-    
-    var rippleElements = document.getElementsByClassName('ripple');
+"use strict";
 
-    //Create Ripple Effect
-    function createRipple() {
+document.addEventListener("DOMContentLoaded", function () {
+    (function (document, window, undefined) {
 
-        //Create Ripple
-        var rippleClassName = "ripple-effect";
-        ripple = document.createElement("div");
-        ripple.className = rippleClassName;
+        var rippleElements = document.querySelectorAll('.ripple');
 
-        //Add Ripple to document
-        this.appendChild(ripple);
+        //Create Ripple Effect
+        function createRipple() {
 
-        //Position Ripple
-        var rect = event.target.getBoundingClientRect();
-        ripple.style.top = (event.pageY || event.targetTouches[0].pageY) - rect.top - ripple.offsetHeight / 2 - document.body.scrollTop + 'px';
-        ripple.style.left = (event.pageX || event.targetTouches[0].pageX) - rect.left - ripple.offsetWidth / 2 - document.body.scrollLeft + 'px';
+            //Create Ripple
+            var rippleClassName = "ripple-effect";
+            var ripple = document.createElement("div");
+            ripple.className = rippleClassName;
 
-        ripple.addEventListener("animationend", destroyRipple, false);
-        ripple.addEventListener("webkitAnimationEnd", destroyRipple, false);
-        ripple.addEventListener("oAnimationEnd", destroyRipple, false);
-        ripple.addEventListener("MSAnimationEnd", destroyRipple, false);
-    }
+            //Add Ripple to document
+            this.appendChild(ripple);
 
-    function destroyRipple() {
-        this.parentElement.removeChild(this);
-    }
+            //Position Ripple
+            var rect = event.target.getBoundingClientRect();
+            ripple.style.top = (event.pageY || event.targetTouches[0].pageY) - rect.top - ripple.offsetHeight / 2 - document.body.scrollTop + 'px';
+            ripple.style.left = (event.pageX || event.targetTouches[0].pageX) - rect.left - ripple.offsetWidth / 2 - document.body.scrollLeft + 'px';
 
-    //Add Event Listeners
-    for (var i = 0; i < rippleElements.length; i++) {
-        rippleElements[i].addEventListener('mousedown', createRipple, false);
-        rippleElements[i].addEventListener('touchstart', createRipple, false);
-    }
+            ripple.addEventListener("animationend", destroyRipple, false);
+            ripple.addEventListener("webkitAnimationEnd", destroyRipple, false);
+            ripple.addEventListener("oAnimationEnd", destroyRipple, false);
+            ripple.addEventListener("MSAnimationEnd", destroyRipple, false);
+        }
 
-})(document, window);
+        function destroyRipple() {
+            this.parentElement.removeChild(this);
+        }
+
+        //Add Event Listeners
+        for (var i = 0; i < rippleElements.length; i++) {
+            var ripple = rippleElements[i];
+            ripple.addEventListener('mousedown', createRipple, false);
+            ripple.addEventListener('touchstart', createRipple, false);
+        };
+    })(document, window);
+});
