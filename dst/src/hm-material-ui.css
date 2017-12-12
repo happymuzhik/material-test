@@ -1,3 +1,67 @@
+form {
+  padding: 30px;
+}
+.ma-form-group,
+.form-group {
+  margin: 10px;
+}
+.ma-form-group {
+  position: relative;
+}
+
+.ma-input {
+  width: 100%;
+  max-width: 200px;
+  padding: 10px 5px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+}
+.ma-input:focus {
+  outline: none;
+}
+.ma-input:focus~.bar:before,
+.ma-input:focus~.bar:after {
+  width: 50%;
+}
+.ma-input:valid {
+  border-bottom: 1px solid #333;
+}
+.ma-input:focus~label,
+.ma-input:valid~label {
+  top: -15px;
+  color: #333;
+  -webkit-transition: top 200ms ease;
+  transition: top 200ms ease;
+}
+.ma-input~label {
+  pointer-events: none;
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  color: #ccc;
+}
+.bar {
+  position: relative;
+  max-width: 200px;
+}
+.bar:before,
+.bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  position: absolute;
+  top: -1px;
+  background-color: #333;
+  -webkit-transition: width 200ms ease;
+  transition: width 200ms ease;
+}
+.bar:before {
+  left: 50%;
+}
+.bar:after {
+  right: 50%;
+}
+
 /*
  * Bootstrap Reboot v4.0.0-beta.2 (https://getbootstrap.com)
  * Copyright 2011-2017 The Bootstrap Authors
@@ -613,7 +677,7 @@ body {
 }
 html *,
 body * {
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 
@@ -709,68 +773,4 @@ body * {
     height: 500px;
     opacity: 0;
   }
-}
-
-form {
-  padding: 30px;
-}
-.ma-form-group,
-.form-group {
-  margin: 10px;
-}
-.ma-form-group {
-  position: relative;
-}
-
-.ma-input {
-  width: 100%;
-  max-width: 200px;
-  padding: 10px 5px;
-  border: none;
-  border-bottom: 1px solid #ccc;
-}
-.ma-input:focus {
-  outline: none;
-}
-.ma-input:focus~.bar:before,
-.ma-input:focus~.bar:after {
-  width: 50%;
-}
-.ma-input:valid {
-  border-bottom: 1px solid #333;
-}
-.ma-input:focus~label,
-.ma-input:valid~label {
-  top: -15px;
-  color: #333;
-  -webkit-transition: top 200ms ease;
-  transition: top 200ms ease;
-}
-.ma-input~label {
-  pointer-events: none;
-  position: absolute;
-  left: 5px;
-  top: 10px;
-  color: #ccc;
-}
-.bar {
-  position: relative;
-  max-width: 200px;
-}
-.bar:before,
-.bar:after {
-  content: '';
-  height: 2px;
-  width: 0;
-  position: absolute;
-  top: -1px;
-  background-color: #333;
-  -webkit-transition: width 200ms ease;
-  transition: width 200ms ease;
-}
-.bar:before {
-  left: 50%;
-}
-.bar:after {
-  right: 50%;
 }
