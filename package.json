@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/happymuzhik/material-test/issues"
   },
-  "homepage": "https://github.com/happymuzhik/material-test#readme",
+  "homepage": "https://happymuzhik.github.io/material-test",
   "devDependencies": {
     "autoprefixer-stylus": "^0.14.0",
     "babel-core": "^6.26.0",
